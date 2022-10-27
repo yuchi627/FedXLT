@@ -1,6 +1,6 @@
 # **Explainable Federated Learning Method for Privacy-preserving Long-tailed Visual Recognition**
 
-This repository contains code for the paper:
+This repository contains code for the paper:  
 **Explainable Federated Learning Method for Privacy-preserving Long-tailed Visual Recognition**  
 > Yu-Chi Wang, Jen-Sheng Tsai, and Yau-Hwang Kuo  
 > Institute of Medical Informatics, National Cheng Kung University  
