@@ -27,8 +27,8 @@ This is an official implementation of the following paper:
 - CIFAR10-LT
 - CIFAR100-LT
 - Place-LT
-    Download the [Places_365](http://places2.csail.mit.edu/download.html).
-    
+    - Download the [Places_365](http://places2.csail.mit.edu/download.html).
+
 ### Reference：https
 * prototree：https://github.com/M-Nauta/ProtoTree
 * place-LT(split train and test file)：https://github.com/facebookresearch/classifier-balancing
