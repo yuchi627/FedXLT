@@ -30,4 +30,5 @@ This is an official implementation of the following paper:
 
 ### Reference：https
 * prototree：https://github.com/M-Nauta/ProtoTree
+* place-LT(split train and test file)：https://github.com/facebookresearch/classifier-balancing
 
