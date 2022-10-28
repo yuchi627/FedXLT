@@ -173,7 +173,8 @@ def main():
         ckpt_path = "ckpt/"+log_name+".pt"
         torch.save({
             'model_state_dict': prototree.state_dict(),
-            'args_dict':args
+            'args_dict':args,
+            'original_dict_per_client':original_dict_per_client
             }, ckpt_path)
     # ----- write_info some info of this process -----
     done_msg=log_name+" Done !!!!!!"

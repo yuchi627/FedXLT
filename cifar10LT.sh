@@ -33,9 +33,9 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
---named=cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r \
-2>&1 | tee output_txt/cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r.txt
+--depth=4 \
+--named=cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r \
+2>&1 | tee output_txt/cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r.txt
 
 
 ## ---- cifar10 non-IID IF50 -----
@@ -72,9 +72,9 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
---named=cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r \
-2>&1 | tee output_txt/cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r.txt
+--depth=4 \
+--named=cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r \
+2>&1 | tee output_txt/cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r.txt
 
 
 ## ---- cifar10 non-IID IF10 -----
@@ -111,9 +111,9 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
---named=cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r \
-2>&1 | tee output_txt/cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r.txt
+--depth=4 \
+--named=cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r \
+2>&1 | tee output_txt/cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r.txt
 
 
 ###### ============= IID ==================
@@ -151,10 +151,10 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
+--depth=4 \
 --iid \
---named=cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID \
-2>&1 | tee output_txt/cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt
+--named=cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID \
+2>&1 | tee output_txt/cifar10_IF100_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt
 
 
 ## ---- cifar10 IID IF50 -----
@@ -191,10 +191,10 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
+--depth=4 \
 --iid \
---named=cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID \
-2>&1 | tee output_txt/cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt
+--named=cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID \
+2>&1 | tee output_txt/cifar10_IF50_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt
 
 
 ## ---- cifar10 IID IF10 -----
@@ -231,7 +231,7 @@ python main.py \
 --thres_many=1500 \
 --thres_few=200 \
 --save_ckpt \
---depth=5 \
+--depth=4 \
 --iid \
---named=cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID \
-2>&1 | tee output_txt/cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep5_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt
+--named=cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID \
+2>&1 | tee output_txt/cifar10_IF10_res50_ClsC_Re10S_Cls3Data1Rare3Lamdagkt_dep4_preDec001_Fre30_bs128_LT_10C10_100r_IID.txt

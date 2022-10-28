@@ -6,7 +6,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 from torch.utils.data.dataloader import DataLoader
 
-from Dataset.dataset import show_clients_data_distribution, Indices2Dataset, classify_label, Indices2Dataset_contrastive
+from Dataset.dataset import show_clients_data_distribution, Indices2Dataset, classify_label
 from Dataset.data import get_data
 from Dataset.sampling import iid
 from Dataset.sample_dirichlet import clients_indices
@@ -35,7 +35,7 @@ import os
 
 def main():
     args = args_parser()
-    checkpoint, args, save_dir = load_ckpt(args)
+    checkpoint, args, save_dir, original_dict_per_client = load_ckpt(args)
     # sys.exit()
     random_state = np.random.RandomState(args.seed)
     # ----- Load data -----
@@ -47,21 +47,22 @@ def main():
     #     test_label[l]+=1
     # ----- Distribute data -----
     # dict_trainset_idx, _, _, original_dict_per_client = imbalance_iidTrain_iidTest(data_local_training, data_local_training, data_global_test, args.num_clients, args.imb_factor)
-    if not args.test_data == '':
-        with open(args.test_data, "rb") as f:
-            list_client2indices = pickle.load(f)
-        print("Load data distribution by ", args.test_data)
-    elif args.iid:
-        # ------- iid -------
-        dict_trainset_idx, _, _, original_dict_per_client = iid(data_local_training, data_local_training, data_global_test, args.num_clients)
-        list_client2indices = [dict_trainset_idx[k] for k in dict_trainset_idx]
-    else:
-        # ------- non-iid -------
-        list_label2indices_train_new = classify_label(data_local_training, num_classes)
-        list_client2indices = clients_indices(deepcopy(list_label2indices_train_new), args.num_classes,
-                                            args.num_clients, args.non_iid_alpha, args.seed)                                     
-    original_dict_per_client = show_clients_data_distribution(data_local_training, list_client2indices,
-                                                              args.num_classes, None)
+    if not args.ori_data_dis:
+        if not args.test_data == '':
+            with open(args.test_data, "rb") as f:
+                list_client2indices = pickle.load(f)
+            print("Load data distribution by ", args.test_data)
+        elif args.iid:
+            # ------- iid -------
+            dict_trainset_idx, _, _, original_dict_per_client = iid(data_local_training, data_local_training, data_global_test, args.num_clients)
+            list_client2indices = [dict_trainset_idx[k] for k in dict_trainset_idx]
+        else:
+            # ------- non-iid -------
+            list_label2indices_train_new = classify_label(data_local_training, num_classes)
+            list_client2indices = clients_indices(deepcopy(list_label2indices_train_new), args.num_classes,
+                                                args.num_clients, args.non_iid_alpha, args.seed)                                     
+        original_dict_per_client = show_clients_data_distribution(data_local_training, list_client2indices,
+                                                                args.num_classes, None)
     # print("original_dict_per_client", original_dict_per_client)
     # sys.exit()
     testloader = DataLoader(data_global_test, args.batch_size_test, 

@@ -60,7 +60,8 @@ def load_ckpt(args):
             os.makedirs(save_dir)
         # --- Load args in ckpt --- 
         args = checkpoint['args_dict']
-        return checkpoint, args, save_dir
+        original_dict_per_client = checkpoint['original_dict_per_client']
+        return checkpoint, args, save_dir, original_dict_per_client
     except:
         raise Exception(f'Could not find checkpoint from "{ckpt_dir}"!')
 

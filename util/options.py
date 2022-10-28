@@ -73,6 +73,7 @@ def args_parser():
 
     parser.add_argument('--test_data', type=str, default='', help='Specifies the data distribution to use(if wanted)')
     parser.add_argument('--ckpt_dir', type=str, default='name of the checkpoint dir for loading')
+    parser.add_argument('--ori_data_dis', action='store_true', help='When set, use the original client data distribution to visualize prototree.')  
 
 
     # prototree

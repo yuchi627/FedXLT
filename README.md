@@ -32,4 +32,5 @@ This repository contains code for the paper:
 ### Reference
 * prototree：https://github.com/M-Nauta/ProtoTree
 * place-LT(split train and test file)：https://github.com/facebookresearch/classifier-balancing
+* client data Non-IID distrbution (Distribute data to client with Non-iid distribution)：https://github.com/shangxinyi/CReFF-FL
 
